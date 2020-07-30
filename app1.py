@@ -84,6 +84,7 @@ def pals():
 
     return pets_json
 
+
 @app.route("/api/pariya")
 def pals():
     conn = engine.connect()
@@ -124,6 +125,7 @@ def pals():
 
     return pets_json
 
+
 @app.route("/api/jamiejames")
 def pals():
     conn = engine.connect()
@@ -142,6 +144,9 @@ def pals():
     conn.close()
 
     return pets_json
+
+
+
 
 
 if __name__ == "__main__":
