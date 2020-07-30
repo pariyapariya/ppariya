@@ -58,9 +58,7 @@ def pals_summary():
     '''
 
     pets_df = pd.read_sql(query, con=conn)
-
     pets_json = pets_df.to_json(orient='records')
-
     conn.close()
 
     return pets_json
@@ -77,77 +75,10 @@ def pals():
     '''
 
     pets_df = pd.read_sql(query, con=conn)
-
     pets_json = pets_df.to_json(orient='records')
-
     conn.close()
 
     return pets_json
-
-
-@app.route("/api/pariya")
-def pals():
-    conn = engine.connect()
-
-    query = '''
-        SELECT
-            *
-        FROM
-            pets
-    '''
-
-    pets_df = pd.read_sql(query, con=conn)
-
-    pets_json = pets_df.to_json(orient='records')
-
-    conn.close()
-
-    return pets_json
-
-
-
-@app.route("/api/hotmessjes")
-def pals():
-    conn = engine.connect()
-
-    query = '''
-        SELECT
-            *
-        FROM
-            pets
-    '''
-
-    pets_df = pd.read_sql(query, con=conn)
-
-    pets_json = pets_df.to_json(orient='records')
-
-    conn.close()
-
-    return pets_json
-
-
-@app.route("/api/jamiejames")
-def pals():
-    conn = engine.connect()
-
-    query = '''
-        SELECT
-            *
-        FROM
-            pets
-    '''
-
-    pets_df = pd.read_sql(query, con=conn)
-
-    pets_json = pets_df.to_json(orient='records')
-
-    conn.close()
-
-    return pets_json
-
-
-
-
 
 if __name__ == "__main__":
     app.run(debug=True)
