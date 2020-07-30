@@ -84,7 +84,8 @@ def pals():
 
     return pets_json
 
-@app.route("/api/pariyapariya")
+
+@app.route("/api/pariya")
 def pals():
     conn = engine.connect()
 
@@ -124,24 +125,28 @@ def pals():
 
     return pets_json
 
-    @app.route("/api/james")
-    def pals():
-        conn = engine.connect()
 
-        query = '''
-            SELECT
-                *
-            FROM
-                pets
-        '''
+@app.route("/api/jamiejames")
+def pals():
+    conn = engine.connect()
 
-        pets_df = pd.read_sql(query, con=conn)
+    query = '''
+        SELECT
+            *
+        FROM
+            pets
+    '''
 
-        pets_json = pets_df.to_json(orient='records')
+    pets_df = pd.read_sql(query, con=conn)
 
-        conn.close()
+    pets_json = pets_df.to_json(orient='records')
 
-        return pets_json
+    conn.close()
+
+    return pets_json
+
+
+
 
 
 if __name__ == "__main__":
